@@ -25,6 +25,6 @@ COPY docker/up /root/up
 
 RUN chmod +x /root/up
 
-EXPOSE 80 3690
+EXPOSE 80 3690 3306
 
-CMD /root/up
+CMD /root/up 

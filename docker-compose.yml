@@ -1,0 +1,17 @@
+uoj:
+  image: uoj
+  ports:
+    - 80:80
+    - 3690:3690
+  expose:
+    - "3306"
+
+# phpmyadmin:
+#   image: phpmyadmin/phpmyadmin
+#   ports:
+#     - "8087:80"
+#   environment:
+#     PMA_HOST: "localhost"
+#   links:
+#     - "uoj"
+    
