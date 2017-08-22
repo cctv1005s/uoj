@@ -1,0 +1,5 @@
+use mysql;
+grant all privileges on *.* to 'root'@'%' identified by 'root';
+update `mysql`.`user` set `Grant_priv` = 'Y' where `user` = 'root';
+delete from user where user='root' and host='localhost';
+flush privileges;
