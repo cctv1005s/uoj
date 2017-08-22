@@ -7,5 +7,4 @@ svnserve -d -r /var/svn
 
 su local_main_judger -c '~/judge_client/judge_client start'
 
-# apache2ctl -D FOREGROUND
-exec bash
+apache2ctl -D FOREGROUND

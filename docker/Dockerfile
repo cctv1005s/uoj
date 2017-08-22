@@ -17,13 +17,17 @@ COPY docker/jdk-7u76-linux-x64.tar.gz \
 	/home/local_main_judger/
 
 COPY docker/install /root/install
+COPY docker/mysql.init /root/mysql.init
+COPY docker/my.cnf /etc/mysql/my.cnf
 
 RUN cd /root && php gen-uoj-config.php && chmod +x install
 RUN cd /root && ./install && rm * -rf
 
 COPY docker/up /root/up
-
 RUN chmod +x /root/up
+
+
+
 
 EXPOSE 80 3690 3306
 

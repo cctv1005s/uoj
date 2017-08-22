@@ -3,6 +3,14 @@ uoj:
   ports:
     - 80:80
     - 3690:3690
-    - 3307:3306
+  expose:
+    - 3306
+  hostname: db
 
+phpmyadmin:
+  image: phpmyadmin/phpmyadmin
+  ports:
+    - 8087:80
+  links:
+    - uoj
     
