@@ -62,5 +62,10 @@ chmod 600 /home/local_main_judger/judge_client/.conf.json
 
 echo 'insert into judger_info (judger_name, password) values ("main_judger", "__main_judger_password__")' | mysql app_uoj233 -u root --password=root
 mysql -u root --password=root < /root/mysql.init
+echo "store-plaintext-passwords = yes" >> /etc/subversion/servers
 
 php /var/www/uoj/app/cli.php upgrade:latest
+
+chown -R mysql:mysql /var/lib/mysql
+chmod +rw /var/lib/mysql
+

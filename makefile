@@ -3,6 +3,6 @@ all: build
 run:
 	sudo docker-compose up 
 build:
-	docker build -f docker/Dockerfile --no-cache=true -t uoj .
+	docker build -f docker/Dockerfile -t uoj-test .
 deploy:
 	sudo docker-compose up -d

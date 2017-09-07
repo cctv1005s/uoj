@@ -1,11 +1,15 @@
 uoj:
-  image: uoj
+  image: uoj-test
   ports:
     - 80:80
     - 3690:3690
   expose:
     - 3306
   hostname: db
+  volumes: 
+    - ./uoj/1:/var/www/uoj
+    - /data/mysql:/var/lib/mysql/app_uoj233
+    - ./docker/up:/root/up
 
 phpmyadmin:
   image: phpmyadmin/phpmyadmin
@@ -13,4 +17,3 @@ phpmyadmin:
     - 8087:80
   links:
     - uoj
-    

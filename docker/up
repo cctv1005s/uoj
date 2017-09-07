@@ -1,10 +1,18 @@
 #!/bin/sh
 
+chown -R mysql:mysql /var/lib/mysql
 service ntp start
 # service apache2 start
-service mysql start
+sudo service mysql start
 svnserve -d -r /var/svn
-
 su local_main_judger -c '~/judge_client/judge_client start'
 
+
+
+mysql -u root --password=root < /root/app_uoj233.sql
+echo 'insert into judger_info (judger_name, password) values ("main_judger", "__main_judger_password__")' | mysql app_uoj233 -u root --password=root
+# php /var/www/uoj/app/cli.php upgrade:latest
+
+
 apache2ctl -D FOREGROUND
+# sudo mysqld

@@ -24,6 +24,7 @@ RUN cd /root && php gen-uoj-config.php && chmod +x install
 RUN cd /root && ./install && rm * -rf
 
 COPY docker/up /root/up
+COPY docker/app_uoj233.sql /root/app_uoj233.sql
 RUN chmod +x /root/up
 
 
